@@ -1,0 +1,130 @@
+/**
+ * Theme Name:     P2 Mobile
+ * Theme URI:      http://dnaber.de/
+ * Description:    Child theme for P2 adding some mobile style foo.
+ * Author:         David Naber
+ * Author URI:      http://dnaber.de/
+ * Template:       p2
+ * Version:        0.1
+ */
+
+@import url( '../p2/style.css' );
+
+#mobile-sidebar {
+	display: none;
+}
+
+@media screen and ( max-width: 1005px ) {
+
+	body {
+		padding: 8px;
+	}
+
+	#header {
+		min-height: 0;
+	}
+
+	#wrapper,
+	#header,
+	#header .sleeve,
+	.sleeve_main,
+	#footer {
+		width: auto;
+	}
+
+	#header .sleeve {
+		display: block;
+		margin-top: 10px;
+	}
+
+	.sleeve_main {
+		margin-right: 0;
+	}
+
+	#sidebar {
+		display: none;
+	}
+
+	#post-types {
+		float: none;
+		width: auto;
+	}
+
+	#directions-keyboard {
+		display: none;
+	}
+
+	#main,
+	h1,
+	#header small,
+	#postbox{
+		padding-left: 8px;
+		padding-right: 8px;
+	}
+
+	#footer p {
+		margin: 12px 8px;
+	}
+
+	#postbox .postrow {
+		height: auto;
+	}
+
+	#postbox input#tags {
+		width: 50%;
+	}
+	#postbox .postrow:after {
+		content: '';
+		clear:left;
+		display: block;
+	}
+	h2 span.controls {
+		color: #fff;
+	}
+	#togglecomments {
+		height: auto;
+		display: inline;
+		background: rgb(255,255,255); /* Old browsers */
+		background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+		color: #777;
+		font-size: 1em;
+		line-height: 2.5;
+		font-weight: bold;
+		border: 1px solid #ccc;
+		-webkit-border-radius: 14px;
+		-moz-border-radius: 14px;
+		border-radius: 12px;
+		height: 28px;
+		padding: 0 10px;
+	}
+
+	#togglecomments:active {
+		background: rgb(237,237,237); /* Old browsers */
+		background: -moz-linear-gradient(top,  rgba(237,237,237,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(237,237,237,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+		background: -webkit-linear-gradient(top,  rgba(237,237,237,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+		background: -o-linear-gradient(top,  rgba(237,237,237,1) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+		background: -ms-linear-gradient(top,  rgba(237,237,237,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+		background: linear-gradient(to bottom,  rgba(237,237,237,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
+	}
+
+	#mobile-sidebar {
+		display: block;
+	}
+	#mobile-sidebar .widget,
+	#p2_mobile_searchform {
+		margin: 20px auto 0;
+		padding: 12px 8px;
+		background: #fff;
+
+		-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+		-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+		box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+
+	}
+}
