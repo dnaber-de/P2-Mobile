@@ -10,121 +10,295 @@
 
 @import url( '../p2/style.css' );
 
-#mobile-sidebar {
+/**
+ * some typo stuff
+ */
+body {
+	padding: 8px;
+	font-family:  "Lato", sans-serif;
+	line-height: 1.6;
+	font-size: 75%;
+	word-spacing: .05em;
+}
+
+form *,
+#respond #cancel-comment-reply-link,
+input,
+textarea {
+	font-family: "Lato", sans-serif;
+}
+
+h1,
+h2,
+h3,
+#postbox label,
+#help dd,
+.inlineediting input.title {
+	font-family: "Karla", sans-serif;
+	font-weight: 700;
+}
+
+.controls {
+	font-weight: 400;
+}
+
+/**
+ * grid
+ */
+#wrapper,
+#header,
+#footer,
+#sidebar .widget {
+	width: auto;
+	max-width: 80em;
+}
+
+#header .sleeve {
+	display: block;
+	margin-top: 10px;
+}
+
+.sleeve_main {
+	margin-right: 0;
+	float: none;
+}
+
+#header {
+	min-height: 0;
+}
+
+#wrapper {
+	background: transparent;
+	box-shadow: none;
+	border: 0 none;
+	/* don't cut the box shadows*/
+	overflow: visible;
+}
+
+#sidebar {
+	width: auto;
+	float: none;
+	padding: 0;
+}
+
+#main,
+h1,
+#header small,
+#postbox{
+	padding-left: 8px;
+	padding-right: 8px;
+}
+
+#main p,
+#main ul,
+#main ol {
+	line-height: inherit;
+}
+
+#main h4 {
+	line-height: .9;
+}
+
+#footer p {
+	margin: 12px 8px;
+}
+
+
+/**
+ * content box style
+ */
+#sidebar .widget,
+#header #p2m-searchform,
+.sleeve_main {
+	margin: 20px auto 0;
+	padding: 12px 8px;
+	background: #fff;
+	-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+	-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/**
+ * general button styling
+ */
+.p2m-button-secondary,
+#togglecomments {
+	height: auto;
+	display: inline;
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+	color: #777;
+	font-size: 1em;
+	line-height: 2.5;
+	font-weight: bold;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 14px;
+	-moz-border-radius: 14px;
+	border-radius: 12px;
+	height: 28px;
+	padding: 0 10px;
+}
+
+.p2m-button-secondary:active,
+#togglecomments:active {
+	background: rgb(237,237,237); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(237,237,237,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(237,237,237,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(237,237,237,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(237,237,237,1) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(237,237,237,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(237,237,237,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
+}
+
+
+#post-types {
+	float: none;
+	width: auto;
+}
+
+#directions-keyboard {
 	display: none;
 }
 
-@media screen and ( max-width: 1005px ) {
 
-	body {
-		padding: 8px;
-	}
+#postbox .postrow {
+	height: auto;
+}
 
-	#header {
-		min-height: 0;
-	}
+#postbox input#tags {
+	width: 50%;
+}
+#postbox .postrow:after {
+	content: '';
+	clear:left;
+	display: block;
+}
+h2 span.controls {
+	color: #fff;
+}
 
-	#wrapper,
-	#header,
-	#header .sleeve,
-	.sleeve_main,
-	#footer {
-		width: auto;
-	}
+/**
+ * button-styling
+ */
+
+.p2m-button-secondary,
+#togglecomments {
+	height: auto;
+	display: inline;
+	background: rgb(255,255,255); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
+	color: #777;
+	font-size: 1em;
+	line-height: 2.5;
+	font-weight: bold;
+	border: 1px solid #ccc;
+	-webkit-border-radius: 14px;
+	-moz-border-radius: 14px;
+	border-radius: 12px;
+	height: 28px;
+	padding: 0 10px;
+}
+
+.p2m-button-secondary:active,
+#togglecomments:active {
+	background: rgb(237,237,237); /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(237,237,237,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(237,237,237,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
+	background: -webkit-linear-gradient(top,  rgba(237,237,237,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
+	background: -o-linear-gradient(top,  rgba(237,237,237,1) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
+	background: -ms-linear-gradient(top,  rgba(237,237,237,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
+	background: linear-gradient(to bottom,  rgba(237,237,237,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
+}
+
+@media screen and ( min-width: 980px ) {
 
 	#header .sleeve {
-		display: block;
-		margin-top: 10px;
+		display: inline-block;
+	}
+
+	#wrapper {
+		border: 1px solid #fff;
 	}
 
 	.sleeve_main {
-		margin-right: 0;
+		float: left;
+		margin-top: 0;
+		margin-right: 2.1%;
+		width: 75%;
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
 	}
 
 	#sidebar {
-		display: none;
-	}
-
-	#post-types {
-		float: none;
 		width: auto;
+		float: none;
+		position: static;
+
 	}
 
-	#directions-keyboard {
+	/**
+	 * reset the box style
+	 */
+	#sidebar .widget,
+	#p2_mobile_searchform {
+		margin:0;
+		padding: 12px 8px;
+		background: transparent;
+
+		-webkit-box-shadow: none;
+		-moz-box-shadow: none;
+		box-shadow: none;
+	}
+
+	#header #p2m-searchform {
 		display: none;
 	}
 
-	#main,
-	h1,
-	#header small,
-	#postbox{
-		padding-left: 8px;
-		padding-right: 8px;
-	}
-
-	#footer p {
-		margin: 12px 8px;
-	}
-
-	#postbox .postrow {
+	/**
+	 * reset button look
+	 */
+	#togglecomments,
+	#togglecomments:active {
+		background: transparent;
+		color: #3478E3;
+		font-size: inherit;
+		font-weight: normal;
+		border: 0 none;
+		border-radius: 0;
 		height: auto;
+		padding: inherit;
 	}
 
-	#postbox input#tags {
-		width: 50%;
+	#togglecomments:hover,
+	#togglecomments:focus,
+	#togglecomments:active {
+		text-decoration: underline;
+		color: #D54E21;
 	}
-	#postbox .postrow:after {
-		content: '';
-		clear:left;
-		display: block;
+
+	/**
+	 * show keybord link
+	 */
+	#directions-keyboard {
+		display: inline;
 	}
 	h2 span.controls {
-		color: #fff;
-	}
-	#togglecomments {
-		height: auto;
-		display: inline;
-		background: rgb(255,255,255); /* Old browsers */
-		background: -moz-linear-gradient(top,  rgba(255,255,255,1) 0%, rgba(237,237,237,1) 100%); /* FF3.6+ */
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(255,255,255,1)), color-stop(100%,rgba(237,237,237,1))); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 100%); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 100%); /* Opera 11.10+ */
-		background: -ms-linear-gradient(top,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 100%); /* IE10+ */
-		background: linear-gradient(to bottom,  rgba(255,255,255,1) 0%,rgba(237,237,237,1) 100%); /* W3C */
-		color: #777;
-		font-size: 1em;
-		line-height: 2.5;
-		font-weight: bold;
-		border: 1px solid #ccc;
-		-webkit-border-radius: 14px;
-		-moz-border-radius: 14px;
-		border-radius: 12px;
-		height: 28px;
-		padding: 0 10px;
+		color: inherit;
 	}
 
-	#togglecomments:active {
-		background: rgb(237,237,237); /* Old browsers */
-		background: -moz-linear-gradient(top,  rgba(237,237,237,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
-		background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(237,237,237,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
-		background: -webkit-linear-gradient(top,  rgba(237,237,237,1) 0%,rgba(255,255,255,1) 100%); /* Chrome10+,Safari5.1+ */
-		background: -o-linear-gradient(top,  rgba(237,237,237,1) 0%,rgba(255,255,255,1) 100%); /* Opera 11.10+ */
-		background: -ms-linear-gradient(top,  rgba(237,237,237,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
-		background: linear-gradient(to bottom,  rgba(237,237,237,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
-	}
 
-	#mobile-sidebar {
-		display: block;
-	}
-	#mobile-sidebar .widget,
-	#p2_mobile_searchform {
-		margin: 20px auto 0;
-		padding: 12px 8px;
-		background: #fff;
 
-		-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-		-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-		box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
-
-	}
 }
+
+

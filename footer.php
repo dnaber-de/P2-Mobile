@@ -5,11 +5,11 @@
  * @package P2 Mobile
  */
 ?>
+	<?php get_sidebar( 'mobile' ); ?>
 	<div class="clear"></div>
 
 </div> <!-- // wrapper -->
 
-<?php get_sidebar( 'mobile' ); ?>
 
 <div id="footer">
 	<p>
