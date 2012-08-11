@@ -73,7 +73,7 @@ h3,
 }
 
 #wrapper {
-	background: transparent;
+	background-color: transparent;
 	box-shadow: none;
 	border: 0 none;
 	/* don't cut the box shadows*/
@@ -124,6 +124,15 @@ h1,
 }
 
 /**
+ * searchform
+ */
+#header #p2m-search-input {
+	min-width: 75%;
+	font-size: 1.4em;
+	padding: 3px;
+}
+
+/**
  * general button styling
  */
 .p2m-button-secondary,
@@ -160,31 +169,72 @@ h1,
 	background: linear-gradient(to bottom,  rgba(237,237,237,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
 }
 
-
-#post-types {
-	float: none;
-	width: auto;
-}
-
 #directions-keyboard {
 	display: none;
 }
+span.sep {
+	display: none;
+}
+/**
+ * post-type buttons
+ */
+#post-types {
+	float: none;
+	width: auto;
+	margin: 0;
+	text-align: justify;
+}
+
+#post-types li {
+	float: none;
+	display: inline-block;
+	font-size: 1.1em;
+	margin-bottom: 1em;
+}
+
+.post-format-button:before {
+	height: 1.6em;
+	background-position: center left;
+}
+
+#post-types:after {
+	display: inline-block;
+	width: 100%;
+	content: ".";
+	height: 0;
+	text-indent: -9999px;
+}
+
+/**
+ * no avatar left from the form, takes to much place
+ */
+#postbox .avatar {
+	display: none;
+}
+#postbox .inputarea {
+	padding-left: 0;
+	height: auto;
+}
+
+form#postnew:after {
+	display: block;
+	clear: both;
+	content:".";
+}
+
 
 
 #postbox .postrow {
 	height: auto;
 }
 
-#postbox input#tags {
-	width: 50%;
-}
 #postbox .postrow:after {
 	content: '';
 	clear:left;
 	display: block;
 }
-h2 span.controls {
-	color: #fff;
+#main > h2 span.controls {
+	display: none;
 }
 
 /**
@@ -192,7 +242,10 @@ h2 span.controls {
  */
 
 .p2m-button-secondary,
-#togglecomments {
+.show-comments,
+.comment-reply-link,
+.edit-post-link,
+#cancel-comment-reply-link {
 	height: auto;
 	display: inline;
 	background: rgb(255,255,255); /* Old browsers */
@@ -215,7 +268,10 @@ h2 span.controls {
 }
 
 .p2m-button-secondary:active,
-#togglecomments:active {
+.show-comments:active,
+.comment-reply-link:active,
+.edit-post-link:active,
+#cancel-comment-reply-link:active {
 	background: rgb(237,237,237); /* Old browsers */
 	background: -moz-linear-gradient(top,  rgba(237,237,237,1) 0%, rgba(255,255,255,1) 100%); /* FF3.6+ */
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(237,237,237,1)), color-stop(100%,rgba(255,255,255,1))); /* Chrome,Safari4+ */
@@ -224,8 +280,105 @@ h2 span.controls {
 	background: -ms-linear-gradient(top,  rgba(237,237,237,1) 0%,rgba(255,255,255,1) 100%); /* IE10+ */
 	background: linear-gradient(to bottom,  rgba(237,237,237,1) 0%,rgba(255,255,255,1) 100%); /* W3C */
 }
+.show-comments {
+	float: right;
+	line-height: 1.6;
+}
+#main,
+#wrapper,
+#main h4 {
+	position: static;
+}
+#main ul.commentlist {
+	margin-left: 10px;
+}
 
-@media screen and ( min-width: 980px ) {
+.avatar {
+	vertical-align: middle;
+}
+#main h4 {
+	font-size: 1.4em;
+	line-height: 2;
+	margin-bottom: 10px;
+	vertical-align: top;
+}
+#main h4:after {
+	display: block;
+	visibility: hidden;
+	height: 0;
+	clear:left;
+	content: ".";
+	line-height: 0;
+}
+#main span.meta {
+	font-size: .6em;
+	padding-left: 20px;
+}
+#main span.actions {
+	/* remove the pipes */
+	position: static;
+	float: right;
+	margin-left: 15px;
+	color: transparent ! important;
+}
+a.thepermalink,
+a.comment-edit-link {
+	display: none;
+}
+.commentcontent {
+	clear: left;
+	overflow: visible;
+}
+
+.postcontent {
+	clear: left;
+	padding-left: 0;
+}
+
+/**
+ * respond form
+ */
+#main .commentlist #respond.replying {
+	margin-left: 0;
+}
+.logged-in-as {
+	display: none;
+}
+#cancel-comment-reply-link {
+	float: right;
+	font-size: 1em;
+	margin-bottom: 15px;
+}
+#main #respond {
+	padding: 8px;
+}
+#respond p.comment-notes {
+	left: 8px;
+	margin-right: 0;
+}
+#reply-title {
+	margin-top: 1.6em;
+}
+#reply-title:after {
+	display: block;
+	clear: right;
+	content: ".";
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+}
+#respond p.comment-form-author,
+#respond p.comment-form-email,
+#respond p.comment-form-url {
+	float: none;
+	width: auto;
+}
+#respond p label {
+	display: block;
+	font-size: 1em;
+}
+
+@media screen and ( min-width: 1024px ) {
 
 	#header .sleeve {
 		display: inline-block;
@@ -239,24 +392,33 @@ h2 span.controls {
 		float: left;
 		margin-top: 0;
 		margin-right: 2.1%;
-		width: 75%;
+		width: 74%;
 		-webkit-box-shadow: none;
 		-moz-box-shadow: none;
 		box-shadow: none;
 	}
 
 	#sidebar {
-		width: auto;
-		float: none;
 		position: static;
+	}
 
+	#sidebar ul li {
+		clear: none;
+	}
+	#sidebar:after {
+		display: block;
+		content: ".";
+		clear: left;
+		height: 0;
+		line-height: 0;
+		visibility: hidden;
 	}
 
 	/**
 	 * reset the box style
 	 */
 	#sidebar .widget,
-	#p2_mobile_searchform {
+	#p2m-searchform {
 		margin:0;
 		padding: 12px 8px;
 		background: transparent;

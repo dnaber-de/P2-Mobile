@@ -3,17 +3,20 @@
 /**
  * function set for the P2 Mobile Child theme
  */
+locate_template( 'inc/class-P2_Mobile.php', TRUE, TRUE );
+P2_Mobile::init();
 
 # hide the default sidebar
 if ( ! function_exists( 'p2m_remove_default_sidebar' ) ) {
 
 	function p2m_remove_default_sidebar() {
 		remove_action( 'wp_head', 'p2_hidden_sidebar_css' );
+		remove_action( 'widgets_init', 'p2_register_sidebar' );
 	}
 
 	add_filter( 'option_p2_hide_sidebar', '__return_true' );
 	add_filter( 'default_option_p2_hide_sidebar', '__return_true' );
-	add_action( 'wp_head', 'p2m_remove_default_sidebar', 9 );
+	add_action( 'after_setup_theme', 'p2m_remove_default_sidebar' );
 }
 
 if ( ! function_exists( 'p2m_device_header' ) ) {
@@ -25,7 +28,7 @@ if ( ! function_exists( 'p2m_device_header' ) ) {
 	 */
 	function p2m_device_header() {
 
-		?>	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"><?php
+		?>	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><?php
 
 	}
 	add_action( 'wp_head', 'p2m_device_header' );
@@ -43,14 +46,15 @@ if ( ! function_exists( 'p2m_mobile_sidebar' ) ) {
 
 		register_sidebar(
 			array(
-				'name' => __( 'Mobile Sidebar (in Footer)', 'p2m_textdomain' ),
+				'name' => __( 'P2 Mobile Sidebar', 'p2m' ),
 				'id'   => 'p2m_mobile_sidebar',
 				'before_widget' => '<div class="widget">',
-				'after_widget'  => '</div>'
+				'after_widget'  => '</div>',
+				'description'   => __( 'These widgets will apear after the main content in the markup, so blow the content on small screens.', 'p2m' )
 			)
 		);
 	}
-	add_action( 'widgets_init', 'p2m_mobile_sidebar' );
+	add_action( 'widgets_init', 'p2m_mobile_sidebar', 11 );
 }
 
 if ( ! function_exists( 'p2m_google_fonts' ) ) {
