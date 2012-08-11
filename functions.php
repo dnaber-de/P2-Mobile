@@ -32,7 +32,30 @@ if ( ! function_exists( 'p2m_device_header' ) ) {
 
 	}
 	add_action( 'wp_head', 'p2m_device_header' );
+}
 
+if ( ! function_exists( 'p2m_sidebar_header' ) ) {
+
+	/**
+	 * add some styles if there are no widgets at all
+	 *
+	 * @return void
+	 */
+	function p2m_sidebar_header() {
+
+		if ( is_dynamic_sidebar( 'p2m_sidebar' ) )
+			return;
+		?>
+	<style type="text/css">
+		.sleeve_main{
+			width: auto;
+			margin-right: 0;
+			float: none;
+		}
+	</style> <?php
+
+	}
+	add_action( 'wp_head', 'p2m_sidebar_header' );
 }
 
 if ( ! function_exists( 'p2m_mobile_sidebar' ) ) {
@@ -47,7 +70,7 @@ if ( ! function_exists( 'p2m_mobile_sidebar' ) ) {
 		register_sidebar(
 			array(
 				'name' => __( 'P2 Mobile Sidebar', 'p2m' ),
-				'id'   => 'p2m_mobile_sidebar',
+				'id'   => 'p2m_sidebar',
 				'before_widget' => '<div class="widget">',
 				'after_widget'  => '</div>',
 				'description'   => __( 'These widgets will apear after the main content in the markup, so blow the content on small screens.', 'p2m' )

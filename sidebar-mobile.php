@@ -6,10 +6,10 @@
  * @package P2 Mobile
  */
 
-if ( is_dynamic_sidebar( 'p2m_mobile_sidebar' ) ) : ?>
+if ( is_dynamic_sidebar( 'p2m_sidebar' ) ) : ?>
 
 	<div id="sidebar">
-		<?php dynamic_sidebar( 'p2m_mobile_sidebar' ); ?>
+		<?php dynamic_sidebar( 'p2m_sidebar' ); ?>
 	</div>
 
 	<?php

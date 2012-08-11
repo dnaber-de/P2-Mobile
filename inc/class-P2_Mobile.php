@@ -71,6 +71,7 @@ class P2_Mobile {
 
 		$this->l10n();
 		add_action( 'wp_enqueue_scripts', array( $this, 'enqueue_scripts' ) );
+		add_action( 'admin_enqueue_scripts', array( $this, 'enqueue_admin_scripts' ) );
 
 	}
 
@@ -89,6 +90,31 @@ class P2_Mobile {
 			FALSE
 		);
 
+	}
+
+	/**
+	 * load javascript in backend
+	 *
+	 * @return void
+	 */
+	public function enqueue_admin_scripts() {
+		global $pagenow;
+
+		wp_enqueue_script(
+			'p2-mobile-admin',
+			self::$url . '/js/p2-mobile-admin.js',
+			array( 'jquery' ),
+			self::VERSION,
+			FALSE
+		);
+
+		wp_localize_script(
+			'p2-mobile-admin',
+			'p2mAdmin',
+			array(
+				'pagenow' => $pagenow
+			)
+		);
 	}
 
 	/**
