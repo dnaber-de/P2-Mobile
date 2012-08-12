@@ -96,8 +96,33 @@ if ( ! function_exists( 'p2m_google_fonts' ) ) {
 	add_action( 'wp_head', 'p2m_google_fonts' );
 }
 
+if ( ! function_exists( 'p2m_skip_link' ) ) {
+
+	/**
+	 * skiplink to the sidebar
+	 *
+	 * @return void
+	 */
+	function p2m_skip_link() {
+
+		if ( ! is_dynamic_sidebar( 'p2m_sidebar' ) )
+			return;
+
+		?>
+	<div id="p2m-skip" class="clearfix">
+		<div class="sleeve_main">
+			<a href="#sidebar"><?php _e( 'Meta', 'p2m' ); ?></a>
+		</div>
+	</div> <?php
+
+	}
+	add_action( 'before', 'p2m_skip_link', 9 );
+
+}
+
 
 /**
  * print the searchform at the very top of the page
  */
 add_action( 'before', 'get_search_form' );
+

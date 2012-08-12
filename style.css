@@ -15,6 +15,7 @@
 
 @import url( '../p2/style.css' );
 
+
 /**
  * some typo stuff
  */
@@ -121,6 +122,23 @@ h1,
 	-webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 	-moz-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/**
+ * skiplink
+ */
+#p2m-skip {
+	width: 5em;
+	margin-bottom: 10px;
+	margin-top: -8px;
+	float: right;
+	text-align: center;
+}
+#p2m-skip .sleeve_main {
+	margin: 0;
+}
+#header #p2m-searchform {
+	clear: right;
 }
 
 /**
