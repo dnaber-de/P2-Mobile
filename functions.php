@@ -71,8 +71,8 @@ if ( ! function_exists( 'p2m_mobile_sidebar' ) ) {
 			array(
 				'name' => __( 'P2 Mobile Sidebar', 'p2m' ),
 				'id'   => 'p2m_sidebar',
-				'before_widget' => '<div class="widget">',
-				'after_widget'  => '</div>',
+				'before_widget' => '<li class="widget">',
+				'after_widget'  => '</li>',
 				'description'   => __( 'These widgets will apear after the main content in the markup, so blow the content on small screens.', 'p2m' )
 			)
 		);

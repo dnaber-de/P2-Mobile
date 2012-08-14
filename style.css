@@ -226,7 +226,7 @@ span.sep {
 /**
  * no avatar left from the form, takes to much place
  */
-#postbox .avatar {
+#postbox div.avatar {
 	display: none;
 }
 #postbox .inputarea {
@@ -258,7 +258,6 @@ form#postnew:after {
 /**
  * button-styling
  */
-
 .p2m-button-secondary,
 .show-comments,
 .comment-reply-link,
@@ -354,8 +353,28 @@ a.comment-edit-link {
 }
 
 /**
- * respond form
+ * respond/edit form
  */
+
+/**
+* shrink edit buttons to fit-width
+* otherwise they block the tag input field
+*
+* @media all
+*/
+.row2:after {
+	display: block;
+	content: ".";
+	height: 0;
+	line-height: 0;
+	visibility: hidden;
+	clear:right;
+}
+.row2 div.buttons {
+	float: right;
+}
+
+
 #main .commentlist #respond.replying {
 	margin-left: 0;
 }
@@ -398,8 +417,23 @@ a.comment-edit-link {
 
 @media screen and ( min-width: 1024px ) {
 
+	body {
+		padding: 0;
+	}
+
+	#p2m-skip {
+		position: absolute;
+		left: -9999px;
+	}
+
+	#header {
+		min-height: 120px;
+		position: relative;
+	}
+
 	#header .sleeve {
 		display: inline-block;
+		margin-top: 40px;
 	}
 
 	#wrapper {
@@ -409,15 +443,136 @@ a.comment-edit-link {
 	.sleeve_main {
 		float: left;
 		margin-top: 0;
-		margin-right: 2.1%;
 		width: 74%;
 		-webkit-box-shadow: none;
 		-moz-box-shadow: none;
 		box-shadow: none;
+
+	}
+	span.sep,
+	#main > h2 span.controls {
+		display: inline;
+	}
+
+	#post-types {
+		float: left;
+		margin-left: 60px;
+		margin-bottom: 10px;
+		width: 650px;
+		text-align: left;
+	}
+	#post-types:after {
+		content: "";
+		display: block;
+		clear: both;
+		text-indent: 0;
+		height: auto;
+	}
+	#post-types li {
+		font-size: inherit;
+		display: block;
+		float: left;
+		margin-bottom: 0;
+	}
+
+	#postbox div.avatar {
+		display: block;
+		margin-top: 31px;
+	}
+	#postbox .inputarea {
+		padding-left: 60px;
+		height: 100%;
+	}
+
+	#main h4 {
+		position: relative;
+		font-size: 1em;
+		line-height: inherit;
+		margin-bottom: 0;
+	}
+	#main h4:after {
+		display: none;
+	}
+
+	#main span.meta {
+		font-size: 1em;
+		padding: 0;
+	}
+	#main span.meta abbr {
+		color: #888888;
+	}
+	#main span.meta > a {
+		border-bottom: 0 none;
+	}
+	#main span.actions {
+		position: absolute;
+		color: #888 !important;
+	}
+	a.thepermalink,
+	a.comment-edit-link {
+		display: inline;
+	}
+
+	.discussion {
+		font-size: .8em;
+	}
+
+	.show-comments {
+		float: none;
+	}
+
+	.commentcontent {
+		clear: none;
+		overflow: auto;
+	}
+
+	.postcontent {
+		clear: none;
+		padding-left: 60px;
+	}
+
+	#main ul.commentlist {
+		margin-left: 60px;
+	}
+
+	#main .commentlist #respond.replying {
+		margin-left: 44px;
+	}
+	#main #respond {
+		padding: 14px 16px 12px 16px;
+	}
+
+	.logged-in-as {
+		display: inline;
+	}
+
+	#cancel-comment-reply-link {
+		float: none;
+		font-size: inherit;
+		margin-bottom: 0;
+		color: #3478E3;
+	}
+	#respond p.comment-notes {
+		left: auto;
+		margin-right: 5%;
+	}
+	#reply-title {
+		margin-top: 0;
+	}
+
+	#respond p.comment-form-author,
+	#respond p.comment-form-email,
+	#respond p.comment-form-url {
+		float: left;
+		width: 30%;
+	}
+	#respond p label {
+		display: inline;
 	}
 
 	#sidebar {
 		position: static;
+		margin-left: 76.5%;
 	}
 
 	#sidebar ul li {
@@ -470,6 +625,31 @@ a.comment-edit-link {
 	#togglecomments:active {
 		text-decoration: underline;
 		color: #D54E21;
+	}
+
+	.p2m-button-secondary,
+	.show-comments,
+	.comment-reply-link,
+	.edit-post-link,
+	#cancel-comment-reply-link {
+		height: auto;
+		display: inline;
+		padding: 0;
+		background: transparent; /* Old browsers */
+		font-size: inherit;
+		line-height: inherit;
+		font-weight: normal;
+		border: 0 none;
+		border-radius: 0;
+		height: auto;
+	}
+
+	.p2m-button-secondary:active,
+	.show-comments:active,
+	.comment-reply-link:active,
+	.edit-post-link:active,
+	#cancel-comment-reply-link:active {
+		background: transparent;
 	}
 
 	/**
