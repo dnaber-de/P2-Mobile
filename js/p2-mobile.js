@@ -12,6 +12,10 @@
 			p2Mobile.permalinkToDate();
 		},
 
+		/**
+		 * made the date-section the permalink
+		 * to save horizontal space
+		 */
 		permalinkToDate : function () {
 
 			$( 'li.comment span.meta' ).each(
