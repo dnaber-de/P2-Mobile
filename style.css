@@ -75,6 +75,7 @@ h3,
 
 #wrapper {
 	background-color: transparent;
+	background-image: none;
 	box-shadow: none;
 	border: 0 none;
 	/* don't cut the box shadows*/
