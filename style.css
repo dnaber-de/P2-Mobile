@@ -137,6 +137,14 @@ h1,
 }
 #p2m-skip .sleeve_main {
 	margin: 0;
+	padding: 0;
+}
+#p2m-skip a {
+	display: block;
+	padding: 8px;
+}
+#p2m-skip a:hover {
+	border: 0 none;
 }
 #header #p2m-searchform {
 	clear: right;
