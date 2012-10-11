@@ -74,12 +74,10 @@ h3,
 }
 
 #wrapper {
-	background-color: #f7f7f7;
+	background-color: transparent;
 	background-image: none;
-	box-shadow: none;
 	border: 0 none;
-	/* don't cut the box shadows*/
-	overflow: visible;
+	box-shadow: none;
 }
 
 #sidebar {
@@ -447,6 +445,8 @@ a.comment-edit-link {
 
 	#wrapper {
 		border: 1px solid #fff;
+		background-color: #f7f7f7;
+		box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
 	}
 
 	.sleeve_main {
@@ -501,6 +501,17 @@ a.comment-edit-link {
 	}
 	#main h4:after {
 		display: none;
+	}
+
+	/**
+	 * leave space for the action-links at
+	 * the top of the content on page templates
+	 */
+	.page .postcontent  {
+		padding-top: 1em;
+	}
+	.page #main ul#postlist li {
+		padding-top: 0;
 	}
 
 	#main span.meta {
