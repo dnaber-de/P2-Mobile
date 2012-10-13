@@ -13,7 +13,7 @@
 		},
 
 		/**
-		 * made the date-section the permalink
+		 * made the date-section beeing the permalink
 		 * to save horizontal space
 		 */
 		permalinkToDate : function () {
