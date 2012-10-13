@@ -117,7 +117,61 @@ if ( ! function_exists( 'p2m_skip_link' ) ) {
 
 	}
 	add_action( 'before', 'p2m_skip_link', 9 );
+}
 
+/**
+ * adapting the custom header stuff
+ *
+ * @see p2/inc/custom-header.php
+ */
+if ( ! function_exists( 'p2m_custom_header_args' ) ) {
+
+	/**
+	 * changing default args for p2's custom header function
+	 *
+	 * @param array $args
+	 * @return array
+	 */
+	function p2m_custom_header_args( $args ) {
+
+		$args[ 'wp-head-callback' ] = 'p2m_custom_header_style';
+
+		return $args;
+	}
+	add_filter( 'p2_custom_header_args', 'p2m_custom_header_args' );
+}
+
+if ( ! function_exists( 'p2m_custom_header_style' ) ) {
+
+	/**
+	 * prints the custom header style
+	 *
+	 * @wp-hook wp_head
+	 * @param array $args
+	 * @return array
+	 */
+	function p2m_custom_header_style( $args ) {
+
+		//call the parents custom style function
+		if ( function_exists( 'p2_header_style' ) )
+			p2_header_style();
+
+		if ( '' == get_header_image() )
+			return;
+		?>
+		<style type="text/css" media="screen and ( max-width: 1024px )">
+			#header {
+				background-image: none;
+				box-shadow: none;
+			}
+			#header .sleeve {
+				margin-top: 8px;
+				background: #fff url(<?php header_image(); ?>) repeat;
+				box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2) ! important;
+			}
+		</style>
+		<?php
+	}
 }
 
 
