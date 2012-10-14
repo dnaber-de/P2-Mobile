@@ -28,7 +28,8 @@ if ( ! function_exists( 'p2m_device_header' ) ) {
 	 */
 	function p2m_device_header() {
 
-		?>	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"><?php
+		?><meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<?php
 
 	}
 	add_action( 'wp_head', 'p2m_device_header' );
@@ -90,8 +91,8 @@ if ( ! function_exists( 'p2m_google_fonts' ) ) {
 	 */
 	function p2m_google_fonts() {
 
-		?><link href='http://fonts.googleapis.com/css?family=Lato:400,400italic,700|Karla:700,400' rel='stylesheet' type='text/css'><?php
-
+		?><link href='http://fonts.googleapis.com/css?family=Lato:400,400italic,700|Karla:700,400' rel='stylesheet' type='text/css' />
+		<?php
 	}
 	add_action( 'wp_head', 'p2m_google_fonts' );
 }
