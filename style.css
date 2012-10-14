@@ -71,9 +71,10 @@ h3,
 
 #header {
 	min-height: 0;
+	margin-bottom: 20px;
 }
 .site-navigation {
-	margin-bottom: 0;
+	margin-bottom: 10px;
 }
 #wrapper {
 	background-color: transparent;
@@ -463,10 +464,8 @@ a.comment-edit-link {
 	}
 
 	#post-types {
-		float: left;
 		margin-left: 60px;
 		margin-bottom: 10px;
-		width: 650px;
 		text-align: left;
 	}
 	#post-types:after {
