@@ -169,6 +169,9 @@ if ( ! function_exists( 'p2m_custom_header_style' ) ) {
 				background: #fff url(<?php header_image(); ?>) repeat;
 				box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2) ! important;
 			}
+			#header a.secondary {
+				width: auto;
+			}
 		</style>
 		<?php
 	}
